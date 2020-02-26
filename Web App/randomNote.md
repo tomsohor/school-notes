@@ -2,7 +2,7 @@
 
 - **MVC**
     - M -> java
-    - V -> jsp/html
+    - V -> jsp/html or vue.js or react
     - C -> servlet
 
 > - seperation of concern
@@ -11,4 +11,11 @@
     - Scalability
 
 >- **model** : is java class
+
+- **ORM:** object relational model
+> - class => table
+> - object => record
+> - variable => attribute/column
+
+
 

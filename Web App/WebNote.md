@@ -17,5 +17,26 @@
 > - object => record
 > - variable => attribute/column
 
+26/2/20
+
+>**Directive**
+    1. page
+    2. include
+    3. taglib
+
+   Page attribute:
+    - errorPage
+    - isErrorPage
+    - session => default= false
+    - import
+    - extent
+    - contextType =" text/html"
+    - isTreadSafe
+    - language (java)
+    - buffer
+    - autoFlash = true
+    - isElignored
+    - isScriptEnable = "true"
+
 
 

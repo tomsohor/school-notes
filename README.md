@@ -1,7 +1,7 @@
 # kkk
 
 > k
-![image](./logging.png)
+`![image](./logging.png)
 link: [google](https://www.google.com)
 
 [for any info](https://github.com/shd101wyy/markdown-preview-enhanced/tree/master/docs)

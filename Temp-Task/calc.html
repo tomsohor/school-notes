@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="calc.css">
+  <script>
+    var newNum ="";
+    var oldNum =0;
+    var Operator='';
+    var numForEqual=0;
+    var first = 0;
+    function myFunction(x){
+      if (first == 0){  
+        if (x=='÷'){
+          document.getElementById('res').value = '÷';
+          Operator = '÷';
+          oldNum = parseFloat(newNum);
+          newNum = "";
+        }
+        else if (x=='del'){
+          newNum=newNum.substring(0, newNum.length-1);
+          document.getElementById('res').value =newNum;
+        }
+        else if (x=='+'){
+          document.getElementById('res').value = '+';
+          Operator = '+';
+          oldNum = parseFloat(newNum);
+          newNum = "";
+        }
+        else if (x=='-'){
+          document.getElementById('res').value = '-';
+          Operator = '-';
+          oldNum = parseFloat(newNum);
+          newNum = "";
+        }
+        else if (x=='x'){
+          document.getElementById('res').value = 'x';
+          Operator = 'x';
+          oldNum = parseFloat(newNum);
+          newNum = "";
+        }
+        else{
+          newNum = newNum + x;
+          document.getElementById('res').value = newNum;
+        }
+    }else{    // second round
+      if (x=='÷'){
+          document.getElementById('res').value = '÷';
+          Operator = '÷';
+          newNum = "";
+        }
+        else if (x=='%'){
+          document.getElementById('res').value ='%';
+          Operator = '%';
+          newNum = "";
+        }
+        else if (x=='+'){
+          document.getElementById('res').value = '+';
+          Operator = '+';
+          newNum = "";
+        }
+        else if (x=='-'){
+          document.getElementById('res').value = '-';
+          Operator = '-';
+          newNum = "";
+        }
+        else if (x=='x'){
+          document.getElementById('res').value = 'x';
+          Operator = 'x';
+          newNum = "";
+        }
+        else{
+          newNum = newNum + x;
+          document.getElementById('res').value = newNum;
+        }
+    }
+    
+    }
+
+    function equal(){
+      if (newNum==''){
+        switch (Operator){
+          case '÷':
+            oldNum = oldNum / parseFloat(numForEqual);
+            document.getElementById('res').value = oldNum;
+            break;
+          case 'x':
+            oldNum = oldNum * parseFloat(numForEqual);
+            document.getElementById('res').value = oldNum;
+            break;
+          case '+':
+            oldNum = oldNum + parseFloat(numForEqual);
+            document.getElementById('res').value = oldNum;
+            break;
+          case '-':
+            oldNum = oldNum - parseFloat(numForEqual);
+            document.getElementById('res').value = oldNum;
+            break;
+        }
+      }else{
+  
+        switch (Operator){
+          case '÷':
+            oldNum = oldNum / parseFloat(newNum);
+            document.getElementById('res').value = oldNum;
+            numForEqual = parseFloat(newNum);
+            newNum = '';
+            first = first + 1;
+            break;
+          case 'x':
+            oldNum = oldNum * parseFloat(newNum);
+            document.getElementById('res').value = oldNum;
+            numForEqual = parseFloat(newNum);
+            newNum = '';
+            first = first + 1;
+            break;
+          case '+':
+            oldNum = oldNum + parseFloat(newNum);
+            document.getElementById('res').value = oldNum;
+            numForEqual = parseFloat(newNum);
+            newNum = '';
+            first = first + 1;
+            break;
+          case '-':
+            oldNum = oldNum - parseFloat(newNum);
+            document.getElementById('res').value = oldNum;
+            numForEqual = parseFloat(newNum);
+            newNum = '';
+            first = first + 1;
+            break;
+        }
+        
+      }
+    }  
+    function restart(){
+      document.getElementById('res').value = '';
+      newNum ="";
+      oldNum =0;
+      Operator='';
+      numForEqual=0;
+      first = 0;
+    }
+    // function del(){
+    //     newNum = newNum.substring(0,newNum.length-1);
+    //     document.getElementById('res').value = newNum;
+    // }
+  </script> 
+</head>
+
+<body>
+  <div id="main">
+    <p id='name'>CALCULATOR</p>
+    <input id="res">
+    <br>
+    <div id="butt">
+      <button type="button" id="restart" onclick="restart()"> AC </button>
+      <!--button type="button" id="del" onclick="del()" disabled> Del </button-->
+      <br>
+      <button type="button" onclick="myFunction('7')"> 7 </button>
+      <button type="button" onclick="myFunction('8')"> 8 </button>
+      <button type="button" onclick="myFunction('9')"> 9 </button>
+      <button type="button" onclick="myFunction('x')"> x </button>
+      <br>
+      <button type="button" onclick="myFunction('4')"> 4 </button>
+      <button type="button" onclick="myFunction('5')"> 5 </button>
+      <button type="button" onclick="myFunction('6')"> 6 </button>
+      <button type="button" onclick="myFunction('-')"> - </button>
+      <br>
+      <button type="button" onclick="myFunction('1')"> 1 </button>
+      <button type="button" onclick="myFunction('2')"> 2 </button>
+      <button type="button" onclick="myFunction('3')"> 3 </button>
+      <button type="button" onclick="myFunction('+')"> + </button>
+      <br>
+      <button type="button" onclick="myFunction('0')"> 0 </button>
+      <button type="button" onclick="myFunction('.')"> . </button>
+      <button type="button" onclick="equal()"> = </button>
+      <button type="button" onclick="myFunction('÷')"> ÷ </button>
+    </div>
+  </div>
+</body>
+
+</html>
